@@ -45,8 +45,8 @@ This will be converted into the feed as follows:
 
 ```
 <ul>
-    <li><a href="{{ post.link }}" target="_blank">{{ post.title }}</a></li>{{ post.title }}
-    <li><a href="{{ post.link }}" target="_blank">{{ post.title }}</a></li>{{ post.title }}
+    <li><a href="{{ post.link }}" target="_blank">{{ post.title }}</a></li>
+    <li><a href="{{ post.link }}" target="_blank">{{ post.title }}</a></li>
     ...
 </ul>
 ```

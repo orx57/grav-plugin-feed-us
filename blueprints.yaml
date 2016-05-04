@@ -1,10 +1,11 @@
 name: Feed Us
-version: 0.1.1
+version: 0.1.2
 description: Import entries from feeds (RSS, ATOM, ...).
-icon: plug
+icon: rss
 author:
   name: Olivier Raggi
   email: olivier@raggi.fr
+  url: http://orx57.net
 homepage: https://github.com/orx57/grav-plugin-feed-us
 demo: http://demo.orx57.net/grav/feed-us-test-page
 keywords: grav, plugin, feed, rss, atom, xml, json
