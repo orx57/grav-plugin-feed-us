@@ -53,6 +53,13 @@ This will be converted into the feed as follows:
 
 # Config Defaults
 
+If you need to override some plugin default values, the best practise is to copy the [feed-us.yaml](feed-us.yaml) file into your `users/config/plugins/` folder (create it if it doesn't exist), and then modify there. This will override the default settings.
+
+```
+enabled: true
+feed_url: https://getgrav.org/blog.rss
+```
+
 # Updating
 
 As development for the Feed Us plugin continues, new versions may become available that add additional features and functionality, improve compatibility with newer Grav releases, and generally provide a better user experience. Updating Feed Us is easy, and can be done through Grav's GPM system, as well as manually.
