@@ -77,7 +77,7 @@ class FeedUsPlugin extends Plugin
     public function onPageContentRaw(Event $e)
     {
         // Get a variable from the plugin configuration
-        $text = $this->grav['config']->get('plugins.feed-us.text_var');
+        $text = $this->grav['config']->get('plugins.feed-us.feed_url');
 
         // Get the current raw content
         $content = $e['page']->getRawContent();
@@ -95,7 +95,7 @@ class FeedUsPlugin extends Plugin
         /** @var Data $config */
         $config = $this->mergeConfig($page, TRUE);
 
-        $url = $this->grav['config']->get('plugins.feed-us.text_var');
+        $url = $this->grav['config']->get('plugins.feed-us.feed_url');
 
         $results = Response::get($url);
 

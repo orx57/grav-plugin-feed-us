@@ -1,10 +1,15 @@
 # Grav Feed Us Plugin
 
-![FeedUs](assets/readme_1.png)
+`Feed Us` is a [Grav](http://github.com/getgrav/grav) plugin that allows to import entries from feeds (RSS, ATOM, XML, JSON) and dislay data on your pages.
 
-`Feed Us` is a [Grav](http://github.com/getgrav/grav) plugin and allows to import entries from feeds (RSS, ATOM, XML, JSON) and dislay data on your pages.
+Currently, this plugin supports only __RSS__ feed type.
 
-Currently, this plugin supports only __RSS__ feed types. Enabling is very simple. just install this plugin in the `/user/plugins/` folder in your Grav install. By default, the plugin is enabled and provides some default values.
+# Roadmap
+
+- Support more feed types (ATOM, XML, JSON)
+- Ability to import multiple feeds
+
+Have a suggestion? I'd love to hear about it! [Make a suggestion](https://github.com/orx57/grav-plugin-feed-us/issues)
 
 # Installation
 
@@ -30,9 +35,43 @@ You should now have all the plugin files under
 
 # Usage
 
-# Roadmap
+To use this plugin you simply need to include a function in your template file or in page with Twig variables processing such as:
 
-- Support more feed types (ATOM, XML, JSON)
-- Ability to import multiple feeds
+```
+{{ feedus_rss() }}
+```
 
-Have a suggestion? I'd love to hear about it! [Make a suggestion](https://github.com/orx57/grav-plugin-feed-us/issues)
+This will be converted into the feed as follows:
+
+```
+<ul>
+    <li><a href="{{ post.link }}" target="_blank">{{ post.title }}</a></li>{{ post.title }}
+    <li><a href="{{ post.link }}" target="_blank">{{ post.title }}</a></li>{{ post.title }}
+    ...
+</ul>
+```
+
+# Config Defaults
+
+# Updating
+
+As development for the Feed Us plugin continues, new versions may become available that add additional features and functionality, improve compatibility with newer Grav releases, and generally provide a better user experience. Updating Feed Us is easy, and can be done through Grav's GPM system, as well as manually.
+
+## GPM Update (Preferred)
+
+The simplest way to update this plugin is via the [Grav Package Manager (GPM)](http://learn.getgrav.org/advanced/grav-gpm). You can do this with this by navigating to the root directory of your Grav install using your system's Terminal (also called command line) and typing the following:
+
+    bin/gpm update feed-us
+
+This command will check your Grav install to see if your Feed Us plugin is due for an update. If a newer release is found, you will be asked whether or not you wish to update. To continue, type `y` and hit enter. The plugin will automatically update and clear Grav's cache.
+
+## Manual Update
+
+Manually updating Feed Us is pretty simple. Here is what you will need to do to get this done:
+
+* Delete the `your/site/user/plugins/feed-us` directory.
+* Downalod the new version of the Feed Us plugin from either [GitHub](https://github.com/orx57/grav-plugin-feed-us) or [GetGrav.org](http://getgrav.org/downloads/plugins#extras).
+* Unzip the zip file in `your/site/user/plugins` and rename the resulting folder to `feed-us`.
+* Clear the Grav cache. The simplest way to do this is by going to the root Grav directory in terminal and typing `bin/grav clear-cache`.
+
+> Note: Any changes you have made to any of the files listed under this directory will also be removed and replaced by the new set. Any files located elsewhere (for example a YAML settings file placed in `user/config/plugins`) will remain intact.
