@@ -1,0 +1,31 @@
+name: Feed Us
+version: 0.1.0
+description: Import entries from feeds (RSS, ATOM, ...).
+icon: plug
+author:
+  name: Olivier Raggi
+  email: olivier@raggi.fr
+homepage: https://github.com/orx57/grav-plugin-feed-us
+demo: http://demo.orx57.net/grav/feed-us-test-page
+keywords: grav, plugin, feed, rss, atom, xml, json
+bugs: https://github.com/orx57/grav-plugin-feed-us/issues
+readme: https://github.com/orx57/grav-plugin-feed-us/blob/develop/README.md
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin status
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+    text_var:
+      type: text
+      label: Feed URL
+      help: Can be a file from a website url (http://...).
