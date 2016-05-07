@@ -11,6 +11,10 @@ Currently, this plugin supports only __RSS__ feed type.
 
 Have a suggestion? I'd love to hear about it! [Make a suggestion](https://github.com/orx57/grav-plugin-feed-us/issues)
 
+# Demo
+
+- [Feed Us Test Page](http://demo.orx57.net/grav/feed-us-test-page)
+
 # Installation
 
 Installing the Feed Us plugin can be done in one of two ways. The GPM (Grav Package Manager) installation method enables you to quickly and easily install the plugin with a simple terminal command, while the manual method enables you to do so via a zip file. 

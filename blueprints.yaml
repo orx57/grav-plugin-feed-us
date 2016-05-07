@@ -10,7 +10,7 @@ homepage: https://github.com/orx57/grav-plugin-feed-us
 demo: http://demo.orx57.net/grav/feed-us-test-page
 keywords: grav, plugin, feed, rss, atom, xml, json
 bugs: https://github.com/orx57/grav-plugin-feed-us/issues
-readme: https://github.com/orx57/grav-plugin-feed-us/blob/develop/README.md
+readme: https://github.com/orx57/grav-plugin-feed-us/blob/master/README.md
 license: MIT
 
 form:

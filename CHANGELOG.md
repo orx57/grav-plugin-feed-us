@@ -1,7 +1,7 @@
 # v0.1.2
 ##  05/04/2016
 
-1. [](#bugfix)
+1. [](#improved)
     * Some minor fixes and writing improvments
 
 # v0.1.1
