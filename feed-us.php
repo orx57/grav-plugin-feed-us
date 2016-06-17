@@ -127,16 +127,19 @@ class FeedUsPlugin extends Plugin
         );
         $r = array();
         $content = new \SimpleXMLElement($xmlstr);
-#        if (count($content['item'])) {
-            foreach ($content->channel->item as $item) {
-                $content = $item->children($ns['content']);
-                $timestamp = strtotime($item->pubDate);
-                $r[$timestamp]['title'] = $item->title;
-                $r[$timestamp]['link'] = $item->link;
-                $r[$timestamp]['description'] = $item->description;
-                $r[$timestamp]['content'] = (string)trim($content->encoded);
-            }
-            $this->addFeed($r);
-#        }
+        if (!empty($content->channel->item)){ $items=$content->channel->item; }
+        if (!empty($content->entry)){ $items=$content->entry; }
+        if (empty($items)){ return false; }
+        foreach ($items as $item) {
+            //$content = $item->children($ns['content']);
+            if(!empty($item->pubDate)){ $timestamp = strtotime($item->pubDate); }
+            if(!empty($item->published)){ $timestamp = strtotime($item->published); }
+            if(!empty($item->title)){ $r[$timestamp]['title'] = $item->title; }
+            if(!empty($item->link['href'])){ $r[$timestamp]['link'] = $item->link['href']; }
+            if(!empty($item->link)){ $r[$timestamp]['link'] = $item->link; }
+            if(!empty($item->description)){	$r[$timestamp]['description'] = $item->description; }
+            //$r[$timestamp]['content'] = (string)trim($content->encoded);
+        }
+        $this->addFeed($r);
     }
 }
