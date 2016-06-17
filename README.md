@@ -2,11 +2,12 @@
 
 `Feed Us` is a [Grav](http://github.com/getgrav/grav) plugin that allows to import entries from feeds (RSS, ATOM, XML, JSON) and dislay data on your pages.
 
-Currently, this plugin supports only __RSS__ feed type.
+Currently, this plugin supports only __RSS__ and __ATOM__ (since v0.1.3) feed type.
 
 # Roadmap
 
-- Support more feed types (ATOM, XML, JSON)
+- Support more feed types (XML, JSON)
+- Support more item attributes (content, image,...)
 - Ability to import multiple feeds
 
 Have a suggestion? I'd love to hear about it! [Make a suggestion](https://github.com/orx57/grav-plugin-feed-us/issues)
