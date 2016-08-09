@@ -1,2 +1,4 @@
 enabled: true
 feed_url: https://getgrav.org/blog.rss
+count: 5
+word_count: 50

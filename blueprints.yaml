@@ -30,3 +30,36 @@ form:
       type: text
       label: Feed URL
       help: Can be a file from a website url (http://...).
+    count:
+      type: number
+      label: Number of feed items
+      help: Number of feed items to display.
+      validate:
+        type: number
+    date:
+      type: toggle
+      label: Publish date
+      highlight: 1
+      default: 1
+      options:
+        1: Show
+        0: Hide
+      validate:
+        type: bool
+    description:
+      type: toggle
+      label: Description
+      highlight: 1
+      default: 1
+      options:
+        1: Show
+        0: Hide
+      validate:
+        type: bool
+    word_count:
+      type: number
+      label: Limit description characters
+      help: Number of characters to display.
+      validate:
+        type: number
+
