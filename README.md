@@ -1,5 +1,7 @@
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
+**DEPRECATED: _This project is no longer supported._**
+
 # Grav Feed Us Plugin
 
 `Feed Us` is a [Grav](http://github.com/getgrav/grav) plugin that allows to import entries from feeds (RSS, ATOM, XML, JSON) and dislay data on your pages.
