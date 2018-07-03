@@ -1,9 +1,6 @@
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
-![Maintenance](https://img.shields.io/maintenance/yes/2016.svg?style=for-the-badge)
-
 **DEPRECATED: _This project is no longer supported._**
-
 
 # Grav Feed Us Plugin
 
