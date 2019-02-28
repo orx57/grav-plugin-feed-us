@@ -1,5 +1,6 @@
-<ul>
-{% for post in feed|slice(0, count)  %}
-    <li><a href="{{ post.link }}" target="_blank">{{ post.title }}</a></li>
+{% for key, post in feed|slice(0, count)  %}
+<div class="feed-item">
+    <h4 class="feedus"><a href="{{ post.link }}" target="_blank">{{ post.title }}</a>{% if post.date %}<small>{{ post.date }}</small>{% endif %}</h4>{% if post.description %}<p>{{ post.description }}</p>{% if (key < (count-1)) %}<hr/>{% endif %}{% endif %}
+</div>
 {% endfor %}
-</ul>
+

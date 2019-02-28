@@ -126,20 +126,42 @@ class FeedUsPlugin extends Plugin
             'dc' => 'http://purl.org/dc/elements/1.1/'
         );
         $r = array();
+        $max = $this->grav['config']->get('plugins.feed-us.count');
+        $count = 0;
         $content = new \SimpleXMLElement($xmlstr);
         if (!empty($content->channel->item)){ $items=$content->channel->item; }
         if (!empty($content->entry)){ $items=$content->entry; }
         if (empty($items)){ return false; }
         foreach ($items as $item) {
+            if($count >= $max) continue;
             //$content = $item->children($ns['content']);
-            if(!empty($item->pubDate)){ $timestamp = strtotime($item->pubDate); }
+            if(!empty($item->pubDate)){$timestamp = strtotime($item->pubDate); }
             if(!empty($item->published)){ $timestamp = strtotime($item->published); }
+            if($this->grav['config']->get('plugins.feed-us.date')){$r[$timestamp]['date'] = date($this->grav['config']->get('system.pages.dateformat.short'),$timestamp);}
             if(!empty($item->title)){ $r[$timestamp]['title'] = $item->title; }
             if(!empty($item->link['href'])){ $r[$timestamp]['link'] = $item->link['href']; }
             if(!empty($item->link)){ $r[$timestamp]['link'] = $item->link; }
-            if(!empty($item->description)){	$r[$timestamp]['description'] = $item->description; }
+            if(!empty($item->description) && $this->grav['config']->get('plugins.feed-us.description')){	$r[$timestamp]['description'] = $this->limit_words($item->description,$this->grav['config']->get('plugins.feed-us.word_count'));}
             //$r[$timestamp]['content'] = (string)trim($content->encoded);
+            $count++;
         }
         $this->addFeed($r);
     }
+    function limit_words($string, $length, $append = '&hellip;', $stopanywhere=false)
+    {
+        //truncates a string to a certain char length, stopping on a word if not specified otherwise.
+        if (strlen($string) > $length) {
+            //limit hit!
+            $string = substr($string,0,($length -3));
+            if ($stopanywhere) {
+                //stop anywhere
+                $string .= $append;
+            } else{
+                //stop on a word.
+                $string = substr($string,0,strrpos($string,' ')).$append;
+            }
+        }
+        return $string;
+    }
+
 }
